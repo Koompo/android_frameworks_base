@@ -328,7 +328,7 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
     public void setGpsSource(String device) {
         synchronized (mLock) {
             
-            LocationProviderInterface gpsLocationProvider =	mRealProviders.get(LocationManager.GPS_PROVIDER);
+            LocationProviderInterface gpsLocationProvider = mRealProviders.get(LocationManager.GPS_PROVIDER);
             
             if (gpsLocationProvider != null && mProvidersByName.containsKey(gpsLocationProvider.getName())) {
                 Slog.i(TAG, "Disable and removing provider " + gpsLocationProvider.getName());
@@ -374,8 +374,8 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
         String btDevice = Settings.System.getString(mContext.getContentResolver(), Settings.Secure.EXTERNAL_GPS_BT_DEVICE);
         if (TextUtils.isEmpty(btDevice)) {
             // Default option
-			btDevice = "0";
-			Settings.System.putString(mContext.getContentResolver(), Settings.Secure.EXTERNAL_GPS_BT_DEVICE, btDevice);
+            btDevice = "0";
+            Settings.System.putString(mContext.getContentResolver(), Settings.Secure.EXTERNAL_GPS_BT_DEVICE, btDevice);
         }
 
         setGpsSource(btDevice);
