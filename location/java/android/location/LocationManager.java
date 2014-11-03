@@ -290,6 +290,14 @@ public class LocationManager {
     private LocationProvider createProvider(String name, ProviderProperties properties) {
         return new LocationProvider(name, properties);
     }
+    
+    public void setGpsSource(String device) {
+        try {
+            mService.setGpsSource(device);
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getMessage(), e);
+        }
+    }
 
     /**
      * Returns a list of the names of all known location providers.
