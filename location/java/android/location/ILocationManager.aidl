@@ -59,6 +59,8 @@ interface ILocationManager
         in GeocoderParams params, out List<Address> addrs);
 
     boolean sendNiResponse(int notifId, int userResponse);
+    
+    void setGpsSource(String device);
 
     // --- deprecated ---
     List<String> getAllProviders();
