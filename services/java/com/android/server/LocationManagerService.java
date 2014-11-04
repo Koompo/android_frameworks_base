@@ -355,7 +355,7 @@ public class LocationManagerService extends ILocationManager.Stub {
     public void setGpsSource(String device) {
         synchronized (mLock) {
             
-            LocationProviderInterface gpsLocationProvider =	mRealProviders.get(LocationManager.GPS_PROVIDER);
+            LocationProviderInterface gpsLocationProvider = mRealProviders.get(LocationManager.GPS_PROVIDER);
             if (gpsLocationProvider != null && mProvidersByName.containsKey(gpsLocationProvider.getName())) {
                 Slog.i(TAG, "Disable and removing provider " + gpsLocationProvider.getName());
                 Settings.Secure.setLocationProviderEnabled(mContext.getContentResolver(), LocationManager.GPS_PROVIDER, false);
