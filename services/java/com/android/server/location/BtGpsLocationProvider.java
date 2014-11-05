@@ -838,11 +838,6 @@ public class BtGpsLocationProvider implements LocationProviderInterface {
     }
 
     @Override
-    public void switchUser(int userId) {
-        // Nothing to do here
-    }
-
-    @Override
     public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
         // TODO: Auto-generated method stub
     }
